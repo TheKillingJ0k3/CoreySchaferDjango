@@ -35,7 +35,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 # Django's interactive console: python manage.py shell
 # views connect models and templates so that we can see posts in our site / post_list view we will need to take the models we want to display and pass them to the template
-
 """
 
 
