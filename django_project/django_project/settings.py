@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 """
 # activate venv: myvenv\Scripts\activate
-# python manage.py migrate from DjangoGirls folder
+# (python manage.py migrate from DjangoGirls folder)
 # starting web server: python manage.py runserver
 # create app: python manage.py startapp blog
 # change models -> tell python we have changes in model: python manage.py makemigrations blog
@@ -58,13 +58,14 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ # add app every time I create a new one
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
