@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 """
+cd django_project
 # activate venv: myvenv\Scripts\activate
 # (python manage.py migrate from DjangoGirls folder)
 # starting web server: python manage.py runserver
+
+DB:
+python manage.py makemigrations detects changes
+python manage.py migrate -> creates auth_user table -> then we can login as admin in server
+
 # create app: python manage.py startapp blog
 # change models -> tell python we have changes in model: python manage.py makemigrations blog
 # apply migration file to db: python manage.py migrate blog
