@@ -19,6 +19,22 @@ cd django_project
 DB:
 python manage.py makemigrations detects changes
 python manage.py migrate -> creates auth_user table -> then we can login as admin in server
+ORM = object relation mapper, easy access to database, use different dbs without changing code
+models.py: create class post -> make migrations ok
+python manage.py sqlmigrate blog 0001 -> writes sql
+python manage.py migrate -> migrations allow us to make changes to dbs even if we have data inside (makemigrations -> migrate)
+python manage.py shell -> 
+>>> from blog.models import Post
+>>> from django.contrib.auth.models import User
+>>> User.objects.all()
+>>> User.objects.first()
+>>> User.objects.filter(username='ggpat') 
+>>> user = User.objects.filter(username='ggpat').first() -> user/id, user.pk, 
+post_1 = Post(title='Blog 1', content='First Post Content', author=user) 
+post_1.save()
+add "    def __str__(self):
+        return self.title" to models.py
+
 
 # create app: python manage.py startapp blog
 # change models -> tell python we have changes in model: python manage.py makemigrations blog
