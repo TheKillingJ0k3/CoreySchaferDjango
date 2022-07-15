@@ -34,6 +34,11 @@ post_1 = Post(title='Blog 1', content='First Post Content', author=user)
 post_1.save()
 add "    def __str__(self):
         return self.title" to models.py
+        
+User registration: new app
+python manage.py startapp users, create register template, create forms.py file inside users, use crispyforms app to put tags in template for bootstrap
+add app in settings
+
 
 
 # create app: python manage.py startapp blog
@@ -87,7 +92,9 @@ INSTALLED_APPS = [ # add app every time I create a new one
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig',
+    'blog.apps.BlogConfig', # check app->apps.py and add class BlogConfig(BlogConfig): name = 'blog')
+    'users.apps.UsersConfig', # check app->apps.py and add class UsersConfig(AppConfig): name = 'users')
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -174,3 +181,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' #because default 2 is outdated
